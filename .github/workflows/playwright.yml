@@ -4,6 +4,7 @@ on:
     branches: [ main, master ]
   pull_request:
     branches: [ main, master ]
+  workflow_dispatch:
 jobs:
   e2e-test:
     timeout-minutes: 60
@@ -12,10 +13,10 @@ jobs:
     - name: Get code
       uses: actions/checkout@v4
 
-    - name: Install Node latest version
+    - name: Install Node 18
       uses: actions/setup-node@v4
       with:
-        node-version: lts/*
+        node-version: 18
 
     - name: Install dependencies
       run: npm install
