@@ -49,4 +49,3 @@ const login = async (page: Page, user: string, pass: string) => {
 
     await page.click('css=button >> text=Entrar')
 }
-
